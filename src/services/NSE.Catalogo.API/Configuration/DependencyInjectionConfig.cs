@@ -5,7 +5,7 @@ using NSE.Catalogo.API.Models;
 
 namespace NSE.Catalogo.API.Configuration
 {
-	public static class DependecyInjectionConfig
+	public static class DependencyInjectionConfig
 	{
 		public static void RegisterServices(this IServiceCollection services)
 		{

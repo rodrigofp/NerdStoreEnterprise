@@ -26,20 +26,18 @@ namespace NSE.Catalogo.API
 			Configuration = builder.Build();
 		}
 
-		
 		public void ConfigureServices(IServiceCollection services)
 		{
 			services.AddApiConfiguration(Configuration);
 			services.AddJwtConfiguration(Configuration);
-			services.RegisterServices();
 			services.AddSwaggerConfiguration();
+			services.RegisterServices();
 		}
 
-		
 		public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
 		{
-			app.UseApiConfiguration(env);
 			app.UseSwaggerConfiguration();
+			app.UseApiConfiguration(env);
 		}
 	}
 }

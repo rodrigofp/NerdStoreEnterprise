@@ -18,16 +18,11 @@ namespace NSE.Identidade.API.Configuration
 		public static IApplicationBuilder UseApiConfiguration(this IApplicationBuilder app, IWebHostEnvironment env)
 		{
 			if (env.IsDevelopment())
-			{
 				app.UseDeveloperExceptionPage();
-			}
-
+			
 			app.UseHttpsRedirection();
-
 			app.UseRouting();
-
 			app.UseAuthConfiguration();
-
 			app.UseEndpoints(endpoints =>
 			{
 				endpoints.MapControllers();
