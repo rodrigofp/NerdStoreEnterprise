@@ -4,6 +4,8 @@ using Microsoft.Extensions.DependencyInjection;
 using NSE.WebApp.MVC.Extensions;
 using NSE.WebApp.MVC.Services;
 using NSE.WebApp.MVC.Services.Handlers;
+using Polly;
+using System;
 
 namespace NSE.WebApp.MVC.Configuration
 {
@@ -16,7 +18,9 @@ namespace NSE.WebApp.MVC.Configuration
 
 			services.AddHttpClient<IAutenticacaoService, AutenticacaoService>();
 			services.AddHttpClient<ICatalogoService, CatalogoService>()
-				.AddHttpMessageHandler<HttpClientAuthorizationDelegatingHandler>();
+				.AddHttpMessageHandler<HttpClientAuthorizationDelegatingHandler>()
+				.AddPolicyHandler(PollyExtensions.EsperarTentar())
+				.AddTransientHttpErrorPolicy(p => p.CircuitBreakerAsync(5, TimeSpan.FromSeconds(30)));
 
 			services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
