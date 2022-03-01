@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31515.178
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{E7D98109-4575-4469-B546-F942E5E798C3}"
 EndProject
@@ -31,13 +31,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Catalogo", "Catalogo", "{B7
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NSE.Catalogo.API", "src\services\NSE.Catalogo.API\NSE.Catalogo.API.csproj", "{885092A3-36A5-41EB-8D4C-F303154D6F32}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cliente", "Cliente", "{B6A1442F-5851-4A47-800D-4ABE1807FE00}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Clientes", "Clientes", "{B6A1442F-5851-4A47-800D-4ABE1807FE00}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Pagamento", "Pagamento", "{F13B0A00-5E46-4AA9-873B-E11F7742FF47}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Pedido", "Pedido", "{1794A9A6-6CEB-49BF-A568-A969A95336D4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NSE.Cliente.API", "src\services\NSE.Cliente.API\NSE.Cliente.API.csproj", "{B5FF1AFD-3D97-46F3-B241-2CAAFC30927D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NSE.Clientes.API", "src\services\NSE.Clientes.API\NSE.Clientes.API.csproj", "{B5FF1AFD-3D97-46F3-B241-2CAAFC30927D}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NSE.Pagamento.API", "src\services\NSE.Pagamento.API\NSE.Pagamento.API.csproj", "{F43F49C7-5B38-4239-804C-288668C00809}"
 EndProject
@@ -45,7 +45,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NSE.Pedido.API", "src\servi
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{B078B8A5-69D0-4902-8531-4AC21AE283EE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NSE.WebAPI.Core", "src\building blocks\NSE.WebAPI.Core\NSE.WebAPI.Core.csproj", "{D4BD9F47-671D-4817-8570-D0E181DA80EC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NSE.WebAPI.Core", "src\building blocks\NSE.WebAPI.Core\NSE.WebAPI.Core.csproj", "{D4BD9F47-671D-4817-8570-D0E181DA80EC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MessageBus", "MessageBus", "{5ECF1966-3B18-4512-A164-1DA6B53DEE8F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NSE.MessageBus", "src\building blocks\NSE.MessageBus\NSE.MessageBus.csproj", "{D8F6013F-A456-4FAD-8B7E-D2970167CABF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -89,6 +93,10 @@ Global
 		{D4BD9F47-671D-4817-8570-D0E181DA80EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D4BD9F47-671D-4817-8570-D0E181DA80EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D4BD9F47-671D-4817-8570-D0E181DA80EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8F6013F-A456-4FAD-8B7E-D2970167CABF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8F6013F-A456-4FAD-8B7E-D2970167CABF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8F6013F-A456-4FAD-8B7E-D2970167CABF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8F6013F-A456-4FAD-8B7E-D2970167CABF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -115,6 +123,8 @@ Global
 		{4F07AB97-3E0B-490E-9D43-DBD9415BBB93} = {1794A9A6-6CEB-49BF-A568-A969A95336D4}
 		{B078B8A5-69D0-4902-8531-4AC21AE283EE} = {FDADE814-C6B9-49A8-AB5C-E5EDD5A14A5E}
 		{D4BD9F47-671D-4817-8570-D0E181DA80EC} = {B078B8A5-69D0-4902-8531-4AC21AE283EE}
+		{5ECF1966-3B18-4512-A164-1DA6B53DEE8F} = {FDADE814-C6B9-49A8-AB5C-E5EDD5A14A5E}
+		{D8F6013F-A456-4FAD-8B7E-D2970167CABF} = {5ECF1966-3B18-4512-A164-1DA6B53DEE8F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {97A0F429-C60B-453C-87AE-D05519333FDF}

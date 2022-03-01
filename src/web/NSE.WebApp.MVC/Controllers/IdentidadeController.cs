@@ -32,12 +32,10 @@ namespace NSE.WebApp.MVC.Controllers
 		{
 			if (!ModelState.IsValid) return View(usuarioRegistro);
 
-			//API - Registro
 			var resposta = await _autenticacaoService.Registro(usuarioRegistro);
 
 			if (ResponsePossuiErros(resposta.ResponseResult)) return View(usuarioRegistro);
 
-			// Realizar login na APP
 			await RealizarLogin(resposta);
 
 			return RedirectToAction("index", "Catalogo");
