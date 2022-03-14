@@ -20,25 +20,20 @@ namespace NSE.Carrinho.API.Models
 		public Guid CarrinhoId { get; set; }
 		public CarrinhoCliente CarrinhoCliente { get; set; }
 
-		internal void AssociarCarrinho(Guid carrinhoId)
-		{
-			CarrinhoId = carrinhoId;
-		}
+		internal void AssociarCarrinho(Guid carrinhoId) 
+			=> CarrinhoId = carrinhoId;
 
-		internal decimal CalcularValor()
-		{
-			return Quantidade * Valor;
-		}
+		internal decimal CalcularValor() 
+			=> Quantidade * Valor;
 
-		internal void AdicionarUnidades(int unidades)
-		{
-			Valor += unidades;
-		}
+		internal void AdicionarUnidades(int unidades) 
+			=> Valor += unidades;
 
-		internal bool IsValid()
-		{
-			return new ItemPedidoValidation().Validate(this).IsValid;
-		}
+		internal void AtualizarUnidades(int unidades) 
+			=> Quantidade = unidades;
+
+		internal bool IsValid() 
+			=> new ItemPedidoValidation().Validate(this).IsValid;
 
 		public class ItemPedidoValidation : AbstractValidator<CarrinhoItem>
 		{
@@ -65,5 +60,7 @@ namespace NSE.Carrinho.API.Models
 					.WithMessage("O valor do item precisa ser maior que 0");
 			}
 		}
+
+		
 	}
 }
