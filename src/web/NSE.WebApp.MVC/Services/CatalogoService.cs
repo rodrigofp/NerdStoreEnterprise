@@ -10,7 +10,7 @@ namespace NSE.WebApp.MVC.Services
 {
 	public class CatalogoService : Service, ICatalogoService
 	{
-		private HttpClient _httpClient;
+		private readonly HttpClient _httpClient;
 
 		public CatalogoService(HttpClient httpClient,
 			IOptions<AppSettings> settings)

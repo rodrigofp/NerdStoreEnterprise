@@ -10,7 +10,7 @@ namespace NSE.WebApp.MVC.Controllers
 		{
 			if (resposta != null && resposta.Errors.Mensagens.Any())
 			{
-				foreach(var mensagem in resposta.Errors.Mensagens)
+				foreach (var mensagem in resposta.Errors.Mensagens)
 				{
 					ModelState.AddModelError(string.Empty, mensagem);
 				}
@@ -19,5 +19,11 @@ namespace NSE.WebApp.MVC.Controllers
 
 			return false;
 		}
+
+		protected void AdicionaErroValidacao(string mensagem)
+			=> ModelState.AddModelError(string.Empty, mensagem);
+
+		protected bool OperacaoValida()
+			=> ModelState.ErrorCount == 0;
 	}
 }
