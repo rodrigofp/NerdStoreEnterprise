@@ -4,9 +4,9 @@ using Polly.Retry;
 using System;
 using System.Net.Http;
 
-namespace NSE.WebApp.MVC.Extensions
+namespace NSE.WebAPI.Core.Extensions
 {
-	public class PollyExtensions
+	public static class PollyExtensions
 	{
 		public static AsyncRetryPolicy<HttpResponseMessage> EsperarTentar()
 		{
